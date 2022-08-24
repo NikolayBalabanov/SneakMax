@@ -1,0 +1,15 @@
+.about {
+  &__image {
+    position: relative;
+    width: 520px;
+    overflow: hidden;
+    transform: skewX(-20deg);
+
+    img {
+      // position: absolute;
+      // left: 50%;
+      object-fit: cover;
+      transform: skewX(20deg) translateX(-50%);
+    }
+  }
+}
