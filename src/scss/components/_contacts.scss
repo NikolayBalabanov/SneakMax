@@ -2,6 +2,12 @@
   padding: var(--big-offset);
   background-color: #f3f6f6;
 
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
   &__title {
     margin-bottom: 60px;
     display: flex;
@@ -21,6 +27,11 @@
     color: var(--color-gray);
   }
 
+  &__text {
+    margin-right: var(--second-offset);
+    width: calc(100% - (680px + var(--second-offset)));
+  }
+
   &__address {
     display: block;
   }
@@ -30,6 +41,11 @@
     margin-bottom: var(--small-offset);
     font: var(--middle-high-bold);
     color: var(--color-main);
+  }
+
+  &__map {
+    width: 680px;
+    height: 500px;
   }
 }
 
