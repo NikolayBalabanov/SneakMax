@@ -27,6 +27,7 @@
     line-height: 200px;
     color: rgba(255, 255, 255, 0.12);
     transform: translate(-50%, -50%);
+    pointer-events: none;
   }
 
   &__title {
