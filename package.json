@@ -11,7 +11,7 @@
     "backend": "gulp backend",
     "code": "editorconfig-checker"
   },
-  "author": "MaxGraph",
+  "author": "NikolaBalabanov",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.10",
