@@ -69,6 +69,11 @@
     &:hover {
       background-color: var(--color-main-hover);
     }
+
+    &--disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
   }
 
   &:hover {
