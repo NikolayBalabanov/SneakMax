@@ -1,9 +1,31 @@
+@import '../mixins';
+
 .footer {
   padding: 20px 0;
   background-color: var(--color-main);
+
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__nav {
+    .nav__list {
+      @include small-tablet {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    .nav__item {
+      @include small-tablet {
+        margin-bottom: var(--small-offset);
+      }
+    }
   }
 }

@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .instagram {
   padding: var(--big-offset);
 
@@ -5,6 +7,10 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    @include small-tablet {
+      justify-content: center;
+    }
   }
 
   &__left {
@@ -13,6 +19,11 @@
     margin-right: var(--small-offset);
     border-radius: 4px;
     background-color: var(--color-eastbay);
+
+    @include small-tablet {
+      width: 100%;
+      margin-right: 0;
+    }
   }
 
   &__right {
@@ -21,6 +32,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__title {
@@ -37,11 +52,16 @@
     text-align: center;
     color: var(--color-white);
     font: var(--middle-book);
+
+    @include small-tablet {
+      max-width: 100%;
+    }
   }
 
   &__link {
     display: inline-block;
     margin-bottom: var(--second-offset);
+    outline: none;
   }
 
   &__input {
@@ -86,29 +106,10 @@
     }
   }
 }
-.visually-hidden {
-}
-.container.instagram__container {
-}
-.instagram__left {
-}
-.instagram__right {
-}
-.callbacl-form {
+
+.callback-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: var(--main-offset) var(--second-offset);
  }
-.instagram__link {
-}
-.instagram__title {
-}
-.instagramm__descr {
-}
-.input.instagram__input {
-}
-.btn.btn-reset.btn--primary.instagram__btn {
-}
-.instagram__content {
-}

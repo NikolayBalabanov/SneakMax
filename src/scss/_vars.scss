@@ -1,3 +1,5 @@
+@import './mixins';
+
 :root {
   // цвета
   --color-black: #000;
@@ -12,7 +14,7 @@
   --color-cameo: #dbbba9;
   --color-grey: #b2b5bb;
   --color-jumbo: #808080;
-
+  --color-btn-active: #8C2828;
   // отступы
   --grid-gap: 20px;
   --main-offset: 40px;
@@ -28,4 +30,15 @@
   --middle-book: 400 16px / 140% var(--font-family);
   --middle-regular: 600 16px / 140% var(--font-family);
   --small-book: 400 14px / 140% var(--font-family);
+}
+
+@include mobile {
+  :root {
+     // отступы
+    --grid-gap: 10px;
+    --main-offset: 20px;
+    --second-offset: 14px;
+    --small-offset: 8px;
+    --big-offset: 30px 0px;
+  }
 }

@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .header {
   position: fixed;
   left: 0;
@@ -34,5 +36,47 @@
     display: flex;
     justify-content: flex-end;
     grid-column: 10 span;
+
+    @include tablet {
+      align-items: center;
+    }
+
+    @include mobile {
+      grid-column: 2 span;
+    }
+  }
+
+  &__nav {
+    @include tablet {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      display: none;
+      background-color: red;
+
+      .nav__list {
+        display: block;
+      }
+
+      &--active {
+        display: block;
+      }
+    }
+  }
+}
+
+.burger {
+  --burger-width: 24px;
+  --burger-height: 18px;
+  --burger-line-height: 3px;
+
+  @include burger;
+
+  display: none;
+  color: var(--color-white);
+
+  @include tablet {
+    display: block;
   }
 }
