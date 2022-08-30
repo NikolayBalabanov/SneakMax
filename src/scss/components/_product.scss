@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .product {
   overflow: hidden;
   border-radius: 4px;
@@ -15,8 +17,12 @@
     height: 100%;
     background: rgba(255, 255, 255, 0.6);
     opacity: 0;
-    visibility: hidden;
+    // visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    @include mobile {
+      opacity: 1;
+    }
   }
 
   &__image {
@@ -45,6 +51,12 @@
     color: var(--color-main);
   }
 
+  &__btns {
+    &--active {
+      opacity: 1;
+    }
+  }
+
   &__btn {
     display: flex;
     align-items: center;
@@ -55,10 +67,12 @@
     height: 80px;
     background-color: var(--color-main);
     transition: background-color 0.3s ease-in-out;
+    outline: none;
 
     svg {
       width: 30px;
       height: 30px;
+      fill: var(--color-white);
       object-fit: cover;
     }
 
@@ -66,8 +80,18 @@
       margin-right: var(--main-offset);
     }
 
-    &:hover {
+    &:focus {
       background-color: var(--color-main-hover);
+    }
+
+    @include desktop {
+      &:hover {
+        background-color: var(--color-main-hover);
+      }
+    }
+
+    &:active {
+      background-color: var(--color-accent-hover);
     }
 
     &--disabled {
@@ -76,10 +100,12 @@
     }
   }
 
-  &:hover {
-    .product__btns {
-      opacity: 1;
-      visibility: visible;
+  @include desktop {
+    &:hover {
+      .product__btns {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 }

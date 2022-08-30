@@ -1,3 +1,13 @@
+@import '../mixins';
+
+.graph-modal {
+  @include tablet {
+    &::before {
+      display: none;
+    }
+  }
+}
+
 .prod-modal {
   padding: var(--main-offset);
   border-radius: 4px;
@@ -5,12 +15,21 @@
 
   .graph-modal__close {
     display: none;
+
+    @include tablet {
+      display: block;
+      z-index: 100;
+    }
   }
 
   &__top {
     display: flex;
     justify-content: space-between;
     margin-bottom: var(--main-offset);
+
+    @include small-tablet {
+      flex-direction: column;
+    }
   }
 
   &__bottom {
@@ -28,6 +47,11 @@
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  @include tablet {
+    margin: 0;
+    width: 100%;
   }
 }
 
@@ -47,6 +71,12 @@
       object-fit: cover;
     }
   }
+
+  @include small-tablet {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: var(--main-offset);
+  }
 }
 
 .modal-info {
@@ -62,10 +92,24 @@
     margin-bottom: var(--main-offset);
     font: var(--middle-book);
     color: var(--color-grey);
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__vendor {
     margin-right: var(--main-offset);
+
+    @include desktop {
+      margin-right: var(--second-offset);
+    }
+
+    @include mobile {
+      margin: 0;
+      margin-bottom: var(--second-offset);
+    }
   }
 
   &__quantity {
@@ -84,6 +128,11 @@
 
   &__rate {
     margin-bottom: var(--second-offset);
+
+    @include small-tablet {
+      margin: 0;
+      margin-bottom: var(--second-offset);
+    }
   }
 
   &__subtitle {
@@ -96,6 +145,10 @@
   &__price {
     display: flex;
     align-items: center;
+
+    @include small-tablet {
+      margin-bottom: var(--second-offset);
+    }
   }
 
   &__current-price {
@@ -113,6 +166,11 @@
 
   &__order {
     margin-top: auto;
+    width: 100%;
+  }
+
+  @include small-tablet {
+    margin: 0;
     width: 100%;
   }
 }
@@ -159,8 +217,10 @@
       object-fit: cover;
     }
 
-    &:hover {
-      opacity: 0.7;
+    @include desktop {
+      &:hover {
+        opacity: 0.7;
+      }
     }
 
     &--active {
@@ -189,14 +249,21 @@
 
 .prod-bottom {
   display: flex;
-  // align-items: flex-start;
-  // justify-content: space-between;
 
   &__column {
     width: calc(50% - (var(--second-offset) / 2));
 
     &:first-child {
       margin-right: var(--second-offset);
+    }
+
+    @include small-tablet {
+      width: 100%;
+
+      &:first-child {
+        margin-right: 0;
+        margin-bottom: var(--second-offset);
+      }
     }
   }
 
@@ -212,6 +279,10 @@
     max-width: 430px;
     font: var(--middle-book);
     color: var(--color-main);
+  }
+
+  @include small-tablet {
+    display: block;
   }
 
 }

@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .hero {
   position: relative;
   padding: 130px 0px;
@@ -28,6 +30,10 @@
     color: rgba(255, 255, 255, 0.12);
     transform: translate(-50%, -50%);
     pointer-events: none;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__title {
@@ -39,6 +45,11 @@
     font-weight: 400;
     font: 700 36px / 140% var(--font-family);
     color: var(--color-white);
+
+    @include small-tablet {
+      max-width: none;
+      font: 700 30px / 140% var(--font-family);
+    }
   }
 
   &__descr {
@@ -47,5 +58,14 @@
     max-width: calc(50% - 100px);
     font: var(--middle-book);
     color: var(--color-white);
+
+    @include small-tablet {
+      max-width: none;
+    }
+  }
+
+  @include small-tablet {
+    padding: 60px 0;
+    height: auto;
   }
 }

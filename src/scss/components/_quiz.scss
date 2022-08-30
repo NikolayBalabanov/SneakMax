@@ -1,9 +1,15 @@
+@import '../mixins';
+
 .quiz {
   padding: var(--big-offset);
   &__content {
     background-color: var(--color-bg);
     border-radius: 4px;
     padding: var(--main-offset) 100px;
+
+    @include small-tablet {
+      padding: var(--main-offset) var(--second-offset);
+    }
   }
 
   &__title {
@@ -40,13 +46,57 @@
     display: grid;
     margin-bottom: var(--main-offset);
     grid-template-rows: 155px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--second-offset) 70px;
+
+    @include tablet {
+      padding: var(--second-offset);
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--small-offset);
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__message {
+    padding: var(--second-offset);
+    width: 465px;
+    height: 246px;
+    resize: none;
+    border: none;
+    border-radius: 4px;
+    color: var(--color-main);
+    background-color: var(--color-white);
+
+    &::placeholder {
+      color: var(--color-cameo);
+    }
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__item {
     img {
       margin-bottom: var(--small-offset);
+    }
+
+    @include mobile {
+
+      img {
+        width: 100%;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: var(--main-offset);
+      }
     }
   }
 }
@@ -59,3 +109,70 @@
   border-top: 1px solid var(--color-jumbo);
 }
 
+.last-question {
+  display: none;
+  padding-top: var(--second-offset);
+
+  &__form {
+    position: relative;
+    max-width: 655px;
+    padding: var(--main-offset);
+    border-radius: 4px;
+    background-color: var(--color-cameo);
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: var(--small-offset);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 140%;
+    color: var(--color-white);
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: var(--second-offset);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    color: var(--color-white);
+  }
+
+  &__input {
+    max-width: 500px;
+    margin-bottom: var(--small-offset);
+
+    &:nth-of-type(2) {
+      margin-bottom: var(--second-offset);
+    }
+
+    @include mobile {
+      max-width: none;
+    }
+  }
+
+  &__btn {
+    min-width: 220px;
+
+    @include mobile {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
+  &__decorate {
+    position: absolute;
+    top: -6px;
+    right: -185px;
+    bottom: -6px;
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+}

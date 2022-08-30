@@ -37,7 +37,7 @@
           </div>
           <div class="modal-info__wrapper">
             <h3 class="modal-info__title">Женские кроссовки Puma Force 1 Shadow</h3>
-            <div class="midal-info__rate">
+            <div class="modal-info__rate">
               <img src="img/star.svg" alt="Рейтинг 5 из 5">
               <img src="img/star.svg" alt="">
               <img src="img/star.svg" alt="">
@@ -130,7 +130,7 @@
               <use xlink:href="img/sprite.svg#angle"></use>
             </svg>
           </button>
-          <ul class="cart-modal-order-list list-reset">
+          <ul class="cart-modal-order__list list-reset">
             <li class="cart-modal-order__item">
               <article class="cart-modal__product cart-modal-product">
                 <div class="cart-modal-product__image">
@@ -151,9 +151,15 @@
         </div>
       </div>
       <form class="cart-modal__form">
-        <input type="text" class="input cart-modal__input" name="name" placeholder="Ваше имя">
-        <input type="text" class="input cart-modal__input" name="tel" placeholder="Номер телефона">
-        <input type="text" class="input cart-modal__input" name="email" placeholder="E-mail">
+        <label class="form-label">
+          <input type="text" class="input cart-modal__input" name="name" placeholder="Ваше имя" data-validate-field="name">
+        </label>
+        <label class="form-label">
+          <input type="text" class="input cart-modal__input" name="tel" placeholder="Номер телефона" data-validate-field="phone">
+        </label>
+        <label class="form-label">
+          <input type="text" class="input cart-modal__input" name="email" placeholder="E-mail" data-validate-field="email">
+        </label>
         <button class="btn btn-reset btn--primary cart-modal__btn">Оформить заказ</button>
       </form>
 		</div>

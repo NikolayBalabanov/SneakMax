@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .social {
   display: flex;
 
@@ -12,6 +14,8 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: opacity 0.3s ease-in-out;
+    outline: none;
 
     &--insta {
       background-image: url('../../img/Instagram.svg');
@@ -19,6 +23,20 @@
 
     &--vk {
       background-image: url('../../img/VK.svg');
+    }
+
+    &:focus {
+      opacity: 0.7;
+    }
+
+    @include desktop {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &:active {
+      opacity: 0.9;
     }
   }
 

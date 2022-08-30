@@ -10,7 +10,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "asd", sans-serif;
+  font-family: "Intro", sans-serif;
   background-color: var(--color-white);
 }
 
@@ -78,6 +78,10 @@ a {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--grid-gap);
+
+  @include mobile {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .btn-reset {
@@ -85,6 +89,7 @@ a {
   padding: 0;
   background: transparent;
   cursor: pointer;
+  // outline: none;
 }
 
 .btn {
@@ -96,18 +101,36 @@ a {
   &--primary {
     background-color: var(--color-accent);
     color: var(--color-white);
+    outline: none;
 
-    &:hover {
-      background-color: var(--color-accent-hover);
+    @include desktop {
+      &:hover {
+        background-color: var(--color-accent-hover);
+      }
+    }
+
+    &:active {
+      color: var(--color-white);
+      background-color: var(--color-btn-active);
+      outline: none;
     }
   }
 
   &--secondary {
     background-color: var(--color-main);
     color: var(--color-white);
+    outline: none;
 
-    &:hover {
-      background-color: var(--color-main-hover);
+    @include desktop {
+      &:hover {
+        background-color: var(--color-main-hover);
+      }
+    }
+
+    &:active {
+      color: var(--color-white);
+      background-color: var(--color-btn-active);
+      outline: none;
     }
   }
 
@@ -116,12 +139,37 @@ a {
     background-color: transparent;
     color: var(--color-main);
     border: 1px solid var(--color-main);
+    outline: none;
 
-    &:hover {
+    @include desktop {
+      &:hover {
+        color: var(--color-white);
+        background-color: var(--color-main);
+      }
+    }
+
+    @include small-tablet {
+      padding: 13px 13px;
+    }
+
+    &:active {
       color: var(--color-white);
-      background-color: var(--color-main);
+      background-color: var(--color-black);
     }
   }
+}
+
+.btn--primary.focus-visible {
+  background-color: var(--color-accent-hover);
+}
+
+.btn--secondary.focus-visible {
+  background-color: var(--color-main-hover);
+}
+
+.btn--thirdly.focus-visible {
+  color: var(--color-white);
+  background-color: var(--color-main);
 }
 
 .title {
@@ -156,6 +204,11 @@ a {
       background-position: center;
     }
   }
+
+}
+
+.custom-checkbox__field:focus + .custom-checkbox__content::before {
+outline: 2px solid var(--color-accent);
 }
 
 .tooltip {
@@ -238,4 +291,15 @@ a {
   &::placeholder {
     color: var(--color-grey);
   }
+}
+
+.form-label {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.js-validate-error-label {
+  order: -1;
 }

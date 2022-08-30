@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .team {
   position: relative;
   padding: var(--big-offset);
@@ -7,6 +9,10 @@
     position: absolute;
     right: 0;
     top: 0;
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__title {
@@ -27,6 +33,10 @@
     overflow: hidden;
     margin-bottom: var(--second-offset);
     border-radius: 7px;
+
+    @include small-tablet {
+      width: 100%;
+    }
   }
 
   &__subtitle {
@@ -41,18 +51,4 @@
     color: var(--color-white);
 
   }
-}
-.container.team__container {
-}
-.title.team__title {
-}
-.team__list.grid.list-reset {
-}
-.team__item {
-}
-.team__img {
-}
-.team__subtitle {
-}
-.team__post {
 }
