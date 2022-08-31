@@ -129,12 +129,12 @@ class Quiz {
 	}
 
 	init() {
-		console.log('init!');
+		// console.log('init!');
 		this.$el.innerHTML = quizTemplate(this.data[this.counter], this.dataLength, this.options);
 	}
 
 	nextQuestion() {
-		console.log('next question!');
+		// console.log('next question!');
 
 		if (this.valid()) {
 			if (this.counter + 1 < this.dataLength) {
@@ -145,7 +145,7 @@ class Quiz {
           document.querySelector('.quiz-question__answers').style.display = 'block';
 				}
 			} else {
-				console.log('А все! конец!');
+				// console.log('А все! конец!');
         document.querySelector('.quiz-questions').style.display = 'none';
         document.querySelector('.last-question').style.display = 'block';
         document.querySelector('.quiz__title').textContent = 'Ваша подборка готова!';
@@ -188,7 +188,7 @@ class Quiz {
 	}
 
 	events() {
-		console.log('events!')
+		// console.log('events!')
 		this.$el.addEventListener('click', (e) => {
 			if (e.target == document.querySelector('[data-next-btn]')) {
 				this.addToSend();

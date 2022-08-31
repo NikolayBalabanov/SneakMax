@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
           // от 0 (весь мир) до 19.
           zoom: 7
       });
+      myMap.behaviors.disable('scrollZoom');
+
   }
 
 })

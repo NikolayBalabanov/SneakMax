@@ -70,12 +70,10 @@ if (catalogList) {
         produstBtns.forEach(el => {
           el.addEventListener('focus', (e) => {
             let parent = e.currentTarget.closest('.product__btns');
-            console.log(parent)
             parent.classList.add('product__btns--active');
           }, true)
           el.addEventListener('blur', (e) => {
             let parent = e.currentTarget.closest('.product__btns');
-            console.log(parent)
             parent.classList.remove('product__btns--active');
           }, true)
         })
@@ -183,7 +181,7 @@ if (catalogList) {
             document.querySelectorAll('.modal-preview__item').forEach(el => {el.classList.remove('modal-preview__item--active')});
             e.currentTarget.classList.add('modal-preview__item--active');
             prodSlider.slideTo(idx);
-            prodSlider.update();
+            // prodSlider.update();
           })
         })
       })

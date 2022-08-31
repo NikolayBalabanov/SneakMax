@@ -22,6 +22,7 @@
 
     @include small-tablet {
       display: block;
+      margin-bottom: var(--second-offset);
     }
   }
 
@@ -31,7 +32,7 @@
     font-weight: 700;
     color: var(--color-main);
 
-    @include mobile {
+    @include small-tablet {
       margin-bottom: var(--second-offset);
     }
   }
@@ -41,12 +42,19 @@
     line-height: 14px;
     color: var(--color-grey);
   }
+
   &__input {
     color: var(--color-grey);
     background-color: #f6f6f6;
 
     &:not(:last-child) {
       margin-bottom: var(--small-offset);
+    }
+  }
+
+  &__btn {
+    @include mobile {
+      width: 100%;
     }
   }
 
@@ -127,6 +135,8 @@
   }
 }
 
+// mini header-cart
+
 .cart-modal {
   .mini-product {
     position: relative;
@@ -184,10 +194,6 @@
       font: var(--small-book);
       line-height: 20px;
     }
-  }
-
-  @include mobile {
-    display: block;
   }
 }
 
