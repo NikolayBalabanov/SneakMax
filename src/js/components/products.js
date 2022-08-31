@@ -39,7 +39,7 @@ if (catalogList) {
             <li class="catalog-list__item">
               <article class="product">
                 <div class="product__image">
-                  <img src="${item.mainImage}" alt="${item.title}">
+                  <img src="${item.mainImage}" loading="lazy" alt="${item.title}">
                   <div class="product__btns">
                     <button class="btn-reset product__btn" data-id="${item.id}" data-graph-path="prod-modal" aria-label="Показать информацию о товаре">
                       <svg>
@@ -112,14 +112,14 @@ if (catalogList) {
             const slides = dataItem.gallery.map((image, idx) => {
               return `
               <div class="swiper-slide" data-index="${idx}">
-                <img src="${image}" alt="${dataItem.title}">
+                <img src="${image}" loading="lazy" alt="${dataItem.title}">
               </div>
               `;
             });
             const preview = dataItem.gallery.map((image, idx) => {
               return `
                 <div class="modal-preview__item ${idx === 0 ? 'modal-preview__item--active' : ''}" tabindex="0" data-index="${idx}">
-                  <img src="${image}" alt="preview ${idx + 1}" data-index="0">
+                  <img src="${image}" loading="lazy" alt="preview ${idx + 1}" data-index="0">
                 </div>
               `;
             });
@@ -135,11 +135,11 @@ if (catalogList) {
             prodModalInfo.innerHTML = `
               <h3 class="modal-info__title">${dataItem.title}</h3>
               <div class="modal-info__rate">
-                <img src="img/star.svg" alt="Рейтинг 5 из 5">
-                <img src="img/star.svg" alt="">
-                <img src="img/star.svg" alt="">
-                <img src="img/star.svg" alt="">
-                <img src="img/star.svg" alt="">
+                <img src="img/star.svg" loading="lazy" alt="Рейтинг 5 из 5">
+                <img src="img/star.svg" loading="lazy" alt="">
+                <img src="img/star.svg" loading="lazy" alt="">
+                <img src="img/star.svg" loading="lazy" alt="">
+                <img src="img/star.svg" loading="lazy" alt="">
               </div>
               <div class="modal-info__sizes">
                 <span class="modal-info__subtitle">Выберите размер</span>
@@ -235,7 +235,7 @@ const loadCartData = (id = 1) => {
             <li class="mini-cart__item" data-id="${dataItem.id}">
               <article class="mini-cart__product mini-product">
                 <div class="mini-product__image">
-                  <img src="${dataItem.mainImage}" alt="${dataItem.title}">
+                  <img src="${dataItem.mainImage}" loading="lazy" alt="${dataItem.title}">
                 </div>
                 <div class="mini-product__content">
                   <div class="mini-product__text">

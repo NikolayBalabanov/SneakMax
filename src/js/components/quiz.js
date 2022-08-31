@@ -77,7 +77,7 @@ const quizTemplate = (data = [], dataLength = 0, options) => {
     if (item.type === 'checkbox') {
       return `
         <li class="quiz-question__item">
-          <img src="img/sneaker.jpg" alt="product-pic">
+          <img src="img/sneaker.jpg" loading="lazy" alt="product-pic">
           <label class="custom-checkbox quiz-question__label">
             <input type="${item.type}" class="custom-checkbox__field data-valid="false quiz-question__answer" name="${data.answer_alias}" ${item.type == 'text' ? 'placeholder="Введите ваш вариант"' : ''} value="${item.type !== 'text' ? item.answer_title : ''}"">
             <span class="custom-checkbox__content">${item.answer_title}</span>
