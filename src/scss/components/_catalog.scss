@@ -3,11 +3,76 @@
 .catalog {
   padding: var(--big-offset);
 
+  &__container {
+    position: relative;
+  }
+
+  &__show {
+    display: none;
+
+    @include tablet {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--second-offset);
+      padding: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      color: var(--color-main);
+      background-color: var(--color-cameo);
+      transition: transform 0.3s ease-in-out;
+
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 11px;
+        padding: 7px;
+        border: solid var(--color-main);
+        border-radius: 5px;
+        border-width: 0 7px 7px 0;
+        transform: rotate(-45deg);
+        transition: transform 0.3s ease-in, left 0.3s ease-in;
+      }
+
+      &--active {
+        &::before {
+          transform: rotate(135deg);
+          left: 15px;
+        }
+      }
+    }
+  }
+
   &__left {
     grid-column: 3 span;
 
     @include tablet {
-      display: none;
+      display: flex;
+      position: absolute;
+      z-index: 50;
+      left: 15px;
+      top: 145px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateX(-101%);
+      transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+
+      &--active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+        pointer-events: inherit;
+        transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+    }
+
+    @include mobile {
+      right: 15px;
     }
   }
 

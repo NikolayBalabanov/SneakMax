@@ -46,9 +46,23 @@
     font: 700 36px / 140% var(--font-family);
     color: var(--color-white);
 
-    @include small-tablet {
-      max-width: none;
+    @include tablet {
+      max-width: 65%;
       font: 700 30px / 140% var(--font-family);
+    }
+
+    @include small-tablet {
+      max-width: 80%;
+      margin-right: 10%;
+      margin-left: 10%;
+      text-align: center;
+    }
+
+    @include mobile {
+      max-width: none;
+      margin-right: 0;
+      margin-left: 0;
+      text-align: center;
     }
   }
 
@@ -59,8 +73,33 @@
     font: var(--middle-book);
     color: var(--color-white);
 
+    @include tablet {
+      max-width: 50%;
+    }
+
     @include small-tablet {
+      max-width: 80%;
+      margin-right: 10%;
+      margin-left: 10%;
+      text-align: center;
+    }
+
+    @include mobile {
       max-width: none;
+      margin-right: 0;
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    @include small-tablet {
+      margin: 0 auto;
+    }
+
+    @include mobile {
+      width: 100%;
+      margin: 0;
     }
   }
 
