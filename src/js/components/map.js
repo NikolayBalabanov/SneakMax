@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     let scrollY = window.scrollY;
     let mapOffset = document.querySelector('#map').offsetTop;
-    if (scrollY >= mapOffset - 500 || (flag == 0)) {
+    if ((scrollY >= mapOffset - 500) && (flag === 0)) {
       ymaps.ready(init);
       function init(){
           const myMap = new ymaps.Map("map", {
@@ -15,6 +15,4 @@ document.addEventListener('DOMContentLoaded', () => {
       flag = 1;
     }
   })
-
-
 })
