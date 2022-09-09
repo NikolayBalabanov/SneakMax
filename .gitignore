@@ -1,7 +1,3 @@
 /node_modules
 # /app
-/src
-gulpfile.js
-package-lock.json
-package.json
 
